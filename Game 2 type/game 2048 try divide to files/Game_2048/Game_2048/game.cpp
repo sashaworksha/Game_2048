@@ -2,7 +2,7 @@
 
 void Game::StartField()
 {
-	//FirstLoader();
+	FirstLoader();
 	int menu;
 	bool exit = true;
 
@@ -29,7 +29,7 @@ void Game::StartField()
 				switch (ch)
 				{
 				case 72:
-				{// нажата клавиша вверх
+				{// Г­Г Г¦Г ГІГ  ГЄГ«Г ГўГЁГёГ  ГўГўГҐГ°Гµ
 					system("cls");
 					cout << "\n\t Do you want save your resalt?\n";
 					cout << "\t          >  Yes < \n";
@@ -39,7 +39,7 @@ void Game::StartField()
 					break;
 				}
 				case 80:
-				{// нажата клавиша вниз
+				{// Г­Г Г¦Г ГІГ  ГЄГ«Г ГўГЁГёГ  ГўГ­ГЁГ§
 					system("cls");
 					cout << "\n\t Do you want save your resalt?\n";
 					cout << "\t             Yes\n";
@@ -69,11 +69,11 @@ void Game::StartField()
 				SetColor(15, 0);
 				system("pause");
 
-				//зразу після гри запис гравця і його результату у текстовий файл
-				write.open("Board_champ.txt", ios::app);  //відкриваємо файл для запису
+				//Г§Г°Г Г§Гі ГЇВіГ±Г«Гї ГЈГ°ГЁ Г§Г ГЇГЁГ± ГЈГ°Г ГўГ¶Гї Ві Г©Г®ГЈГ® Г°ГҐГ§ГіГ«ГјГІГ ГІГі Гі ГІГҐГЄГ±ГІГ®ГўГЁГ© ГґГ Г©Г«
+				write.open("Board_champ.txt", ios::app);  //ГўВіГ¤ГЄГ°ГЁГўГ ВєГ¬Г® ГґГ Г©Г« Г¤Г«Гї Г§Г ГЇГЁГ±Гі
 				write << " " << nameuser;
 				write << " " << bestscore << endl;
-				write.close();  //закриваємо файл
+				write.close();  //Г§Г ГЄГ°ГЁГўГ ВєГ¬Г® ГґГ Г©Г«
 
 				system("cls");
 			}
@@ -83,7 +83,7 @@ void Game::StartField()
 			system("cls");
 			string temp;
 			int temp2;
-			read.open("Board_champ.txt");  //відкриваємо файл для запису
+			read.open("Board_champ.txt");  //ГўВіГ¤ГЄГ°ГЁГўГ ВєГ¬Г® ГґГ Г©Г« Г¤Г«Гї Г§Г ГЇГЁГ±Гі
 			SetColor(14, 0);
 			cout << "  --- Board of Champions --- \n";
 			SetColor(10, 0);
@@ -97,7 +97,7 @@ void Game::StartField()
 				if (k % 2 == 0)
 				{
 					read >> temp2;
-					userready.insert({ temp, temp2 });   //зчитуємо
+					userready.insert({ temp, temp2 });   //Г§Г·ГЁГІГіВєГ¬Г®
 				}
 				else
 				{
@@ -105,7 +105,7 @@ void Game::StartField()
 				}
 			}
 
-			//сортуємо для нормального виводу на екран
+			//Г±Г®Г°ГІГіВєГ¬Г® Г¤Г«Гї Г­Г®Г°Г¬Г Г«ГјГ­Г®ГЈГ® ГўГЁГўГ®Г¤Гі Г­Г  ГҐГЄГ°Г Г­
 			vector<pair<string, int>> vec;
 			// copy key-value pairs from the map to the vector
 			map<string, int> ::iterator it2;
@@ -129,7 +129,7 @@ void Game::StartField()
 			cout << endl;
 
 			system("pause");
-			read.close();  //обовязково закриваємо
+			read.close();  //Г®ГЎГ®ГўГїГ§ГЄГ®ГўГ® Г§Г ГЄГ°ГЁГўГ ВєГ¬Г®
 		}
 		else if (menu == 3)
 		{
@@ -150,7 +150,7 @@ void Game::StartField()
 				switch (ch1)
 				{
 				case 72:
-				{// нажата клавиша вверх
+				{// Г­Г Г¦Г ГІГ  ГЄГ«Г ГўГЁГёГ  ГўГўГҐГ°Гµ
 					system("cls");
 					SetColor(14, 0);
 					cout << "\n \t\t-Settings-\n";
@@ -163,7 +163,7 @@ void Game::StartField()
 					break;
 				}
 				case 80:
-				{// нажата клавиша вниз
+				{// Г­Г Г¦Г ГІГ  ГЄГ«Г ГўГЁГёГ  ГўГ­ГЁГ§
 					system("cls");
 					SetColor(14, 0);
 					cout << "\n \t\t-Settings-\n";
@@ -204,7 +204,7 @@ void Game::StartField()
 			}
 
 		}
-		else  // кінець гри
+		else  // ГЄВіГ­ГҐГ¶Гј ГЈГ°ГЁ
 		{
 			exit = false;
 			system("cls");

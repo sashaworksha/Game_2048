@@ -11,7 +11,7 @@
 #include <conio.h>
 using namespace std;
 
-// кольори
+// ГЄГ®Г«ГјГ®Г°ГЁ
 enum ConsoleColor
 {
 	Black = 0,
@@ -32,21 +32,21 @@ enum ConsoleColor
 	White = 15
 };
 
-// встановлює колір текста і фона в консолі
+// ГўГ±ГІГ Г­Г®ГўГ«ГѕВє ГЄГ®Г«ВіГ° ГІГҐГЄГ±ГІГ  Ві ГґГ®Г­Г  Гў ГЄГ®Г­Г±Г®Г«Ві
 void SetColor(int text, int background)
 {
 	HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
 	SetConsoleTextAttribute(hStdOut, (WORD)((background << 4) | text));
 }
 
-class Dessign //клас у якому будуть картинки тобто перше завантаження, меню та інше 
+class Dessign //ГЄГ«Г Г± Гі ГїГЄГ®Г¬Гі ГЎГіГ¤ГіГІГј ГЄГ Г°ГІГЁГ­ГЄГЁ ГІГ®ГЎГІГ® ГЇГҐГ°ГёГҐ Г§Г ГўГ Г­ГІГ Г¦ГҐГ­Г­Гї, Г¬ГҐГ­Гѕ ГІГ  ВіГ­ГёГҐ 
 {
 public:
-	int score = 0;  //рахунок
-	int bestscore = 0;  // найкращий результат одного гравця
+	int score = 0;  //Г°Г ГµГіГ­Г®ГЄ
+	int bestscore = 0;  // Г­Г Г©ГЄГ°Г Г№ГЁГ© Г°ГҐГ§ГіГ«ГјГІГ ГІ Г®Г¤Г­Г®ГЈГ® ГЈГ°Г ГўГ¶Гї
 	int color = 12;
 
-	void FirstLoader() //просто вивід першої картинки
+	void FirstLoader() //ГЇГ°Г®Г±ГІГ® ГўГЁГўВіГ¤ ГЇГҐГ°ГёГ®Вї ГЄГ Г°ГІГЁГ­ГЄГЁ
 	{
 		int b = 4, w = 12, temp;
 
@@ -170,7 +170,7 @@ public:
 				switch (_getch())
 				{
 				case 72:
-				{// нажата клавиша вверх
+				{// Г­Г Г¦Г ГІГ  ГЄГ«Г ГўГЁГёГ  ГўГўГҐГ°Гµ
 
 					if (el == max)
 					{
@@ -192,7 +192,7 @@ public:
 					break;
 				}
 				case 80:
-				{// нажата клавиша вниз
+				{// Г­Г Г¦Г ГІГ  ГЄГ«Г ГўГЁГёГ  ГўГ­ГЁГ§
 
 					if (el == max)
 					{
@@ -231,7 +231,7 @@ public:
 		return el;
 	}
 
-	void Name() // просто відображає назву гри
+	void Name() // ГЇГ°Г®Г±ГІГ® ГўВіГ¤Г®ГЎГ°Г Г¦Г Вє Г­Г Г§ГўГі ГЈГ°ГЁ
 	{
 		char s = 254;
 
@@ -253,7 +253,7 @@ public:
 		cout << endl;
 	}
 
-	void InGame() // виводить назву і рахунок очок під час гри
+	void InGame() // ГўГЁГўГ®Г¤ГЁГІГј Г­Г Г§ГўГі Ві Г°Г ГµГіГ­Г®ГЄ Г®Г·Г®ГЄ ГЇВіГ¤ Г·Г Г± ГЈГ°ГЁ
 	{
 		SetColor(7, 8);
 		char s = 254;
@@ -281,7 +281,7 @@ public:
 		SetColor(15, 0);
 	}
 
-	void SpecialPrint(vector<string> temp, int el)  // щоб зробити вибір стрілками
+	void SpecialPrint(vector<string> temp, int el)  // Г№Г®ГЎ Г§Г°Г®ГЎГЁГІГЁ ГўГЁГЎВіГ° Г±ГІГ°ВіГ«ГЄГ Г¬ГЁ
 	{
 		int t = 1;
 
@@ -313,13 +313,13 @@ public:
 class Logic :public Dessign
 {
 private:
-	int board[4][4]; // поле, дошка гри 
+	int board[4][4]; // ГЇГ®Г«ГҐ, Г¤Г®ГёГЄГ  ГЈГ°ГЁ 
 	int dirLine[4] = { 1, 0, -1, 0 };
 	int dirColumn[4] = { 0, 1 ,0, -1 };
 public:
 	int lose = 0;
 
-	pair<int, int>generateUnocccupiedPosition()  // для того щоб генерувати і по горизонталі і по вертикалі
+	pair<int, int>generateUnocccupiedPosition()  // Г¤Г«Гї ГІГ®ГЈГ® Г№Г®ГЎ ГЈГҐГ­ГҐГ°ГіГўГ ГІГЁ Ві ГЇГ® ГЈГ®Г°ГЁГ§Г®Г­ГІГ Г«Ві Ві ГЇГ® ГўГҐГ°ГІГЁГЄГ Г«Ві
 	{
 		int occupied = 1, line, column;
 		while (occupied)
@@ -336,13 +336,13 @@ public:
 		return make_pair(line, column);
 	}
 
-	void addPiace() // додає під час гри рандомно нову 2 на екрані
+	void addPiace() // Г¤Г®Г¤Г Вє ГЇВіГ¤ Г·Г Г± ГЈГ°ГЁ Г°Г Г­Г¤Г®Г¬Г­Г® Г­Г®ГўГі 2 Г­Г  ГҐГЄГ°Г Г­Ві
 	{
 		pair<int, int>pos = generateUnocccupiedPosition();
 		board[pos.first][pos.second] = 2;
 	}
 
-	void newGame() // дозволяє почати нову гру
+	void newGame() // Г¤Г®Г§ГўГ®Г«ГїВє ГЇГ®Г·Г ГІГЁ Г­Г®ГўГі ГЈГ°Гі
 	{
 		score = 0;
 		lose = 0;
@@ -358,7 +358,7 @@ public:
 		addPiace();
 	}
 
-	void printUI()  // виводить на екран ігрове поле 
+	void printUI()  // ГўГЁГўГ®Г¤ГЁГІГј Г­Г  ГҐГЄГ°Г Г­ ВіГЈГ°Г®ГўГҐ ГЇГ®Г«ГҐ 
 	{
 		InGame();
 		char s = 254;
@@ -423,7 +423,7 @@ public:
 		SetColor(15, 0);
 	}
 
-	bool canDoMove(int line, int column, int nextLine, int nextColumn) // перевіряє чи можна змінити положення цифрі
+	bool canDoMove(int line, int column, int nextLine, int nextColumn) // ГЇГҐГ°ГҐГўВіГ°ГїВє Г·ГЁ Г¬Г®Г¦Г­Г  Г§Г¬ВіГ­ГЁГІГЁ ГЇГ®Г«Г®Г¦ГҐГ­Г­Гї Г¶ГЁГґГ°Ві
 	{
 		if (nextLine < 0 || nextColumn < 0 || nextLine >= 4 || nextColumn >= 4 ||
 			(board[line][column] != board[nextLine][nextColumn] && board[nextLine][nextColumn] != 0))
@@ -433,7 +433,7 @@ public:
 		return true;
 	}
 
-	void applyMove(int direction)  // змінює положення деяких чисел які можна 
+	void applyMove(int direction)  // Г§Г¬ВіГ­ГѕВє ГЇГ®Г«Г®Г¦ГҐГ­Г­Гї Г¤ГҐГїГЄГЁГµ Г·ГЁГ±ГҐГ« ГїГЄВі Г¬Г®Г¦Г­Г  
 	{
 		int startLine = 0, startColumn = 0, lineStep = 1, columnStep = 1;
 
@@ -479,16 +479,16 @@ public:
 			}
 
 			system("cls");
-			printUI();  // для покрокового баччення переміщення цифр
+			printUI();  // Г¤Г«Гї ГЇГ®ГЄГ°Г®ГЄГ®ГўГ®ГЈГ® ГЎГ Г·Г·ГҐГ­Г­Гї ГЇГҐГ°ГҐГ¬ВіГ№ГҐГ­Г­Гї Г¶ГЁГґГ°
 		} while (movePossible);
 
-		if (canAddPiace)  // оскільки здійснили рух то треба згенерувати нову 2
+		if (canAddPiace)  // Г®Г±ГЄВіГ«ГјГЄГЁ Г§Г¤ВіГ©Г±Г­ГЁГ«ГЁ Г°ГіГµ ГІГ® ГІГ°ГҐГЎГ  Г§ГЈГҐГ­ГҐГ°ГіГўГ ГІГЁ Г­Г®ГўГі 2
 		{
 			addPiace();
 		}
 	}
 
-	void GameProsses() // обєднує все для самої гри лиш(не відповідає за меню ти решту виключно сам процес гри)
+	void GameProsses() // Г®ГЎВєГ¤Г­ГіВє ГўГ±ГҐ Г¤Г«Гї Г±Г Г¬Г®Вї ГЈГ°ГЁ Г«ГЁГё(Г­ГҐ ГўВіГ¤ГЇГ®ГўВіГ¤Г Вє Г§Г  Г¬ГҐГ­Гѕ ГІГЁ Г°ГҐГёГІГі ГўГЁГЄГ«ГѕГ·Г­Г® Г±Г Г¬ ГЇГ°Г®Г¶ГҐГ± ГЈГ°ГЁ)
 	{
 		char commandToDir[248];
 		commandToDir['s'] = 0;
@@ -507,52 +507,52 @@ public:
 			switch (ch)
 			{
 			case 72:
-				// нажата клавиша вверх
+				// Г­Г Г¦Г ГІГ  ГЄГ«Г ГўГЁГёГ  ГўГўГҐГ°Гµ
 				command = 'w';
 				break;
 
 			case 'w':
-				// нажата клавиша вверх
+				// Г­Г Г¦Г ГІГ  ГЄГ«Г ГўГЁГёГ  ГўГўГҐГ°Гµ
 				command = 'w';
 				break;
 			case 75:
-				// нажата клавиша вниз
+				// Г­Г Г¦Г ГІГ  ГЄГ«Г ГўГЁГёГ  ГўГ­ГЁГ§
 				command = 'a';
 				break;
 
 			case 's':
-				// нажата клавиша вниз
+				// Г­Г Г¦Г ГІГ  ГЄГ«Г ГўГЁГёГ  ГўГ­ГЁГ§
 				command = 's';
 				break;
 
 			case 77:
-				// нажата клавиша вправо
+				// Г­Г Г¦Г ГІГ  ГЄГ«Г ГўГЁГёГ  ГўГЇГ°Г ГўГ®
 				command = 'd';
 				break;
 
 			case 'd':
-				// нажата клавиша вправо
+				// Г­Г Г¦Г ГІГ  ГЄГ«Г ГўГЁГёГ  ГўГЇГ°Г ГўГ®
 				command = 'd';
 				break;
 
 			case 80:
-				// нажата клавиша влево
+				// Г­Г Г¦Г ГІГ  ГЄГ«Г ГўГЁГёГ  ГўГ«ГҐГўГ®
 				command = 's';
 				break;
 
 			case 'a':
-				// нажата клавиша влево
+				// Г­Г Г¦Г ГІГ  ГЄГ«Г ГўГЁГёГ  ГўГ«ГҐГўГ®
 				command = 'a';
 				break;
 
 			case 'n':
-				// нажата клавиша влево
+				// Г­Г Г¦Г ГІГ  ГЄГ«Г ГўГЁГёГ  ГўГ«ГҐГўГ®
 				newGame();
 				command = ' ';
 				break;
 
 			case 'q':
-				// нажата клавиша влево
+				// Г­Г Г¦Г ГІГ  ГЄГ«Г ГўГЁГёГ  ГўГ«ГҐГўГ®
 				command = 'q';
 				break;
 
@@ -578,7 +578,7 @@ public:
 	}
 };
 
-class Game : public Logic // клас який збирає все і відповідає за весь процес(також викликаючи те що треба з інших класів)
+class Game : public Logic // ГЄГ«Г Г± ГїГЄГЁГ© Г§ГЎГЁГ°Г Вє ГўГ±ГҐ Ві ГўВіГ¤ГЇГ®ГўВіГ¤Г Вє Г§Г  ГўГҐГ±Гј ГЇГ°Г®Г¶ГҐГ±(ГІГ ГЄГ®Г¦ ГўГЁГЄГ«ГЁГЄГ ГѕГ·ГЁ ГІГҐ Г№Г® ГІГ°ГҐГЎГ  Г§ ВіГ­ГёГЁГµ ГЄГ«Г Г±ВіГў)
 {
 private:
 	ifstream read;
@@ -589,7 +589,7 @@ private:
 public:
 	void StartField()
 	{
-		//FirstLoader();
+		FirstLoader();
 		int menu;
 		bool exit = true;
 
@@ -616,7 +616,7 @@ public:
 					switch (ch)
 					{
 					case 72:
-					{// нажата клавиша вверх
+					{// Г­Г Г¦Г ГІГ  ГЄГ«Г ГўГЁГёГ  ГўГўГҐГ°Гµ
 						system("cls");
 						cout << "\n\t Do you want save your resalt?\n";
 						cout << "\t          >  Yes < \n";
@@ -626,7 +626,7 @@ public:
 						break;
 					}
 					case 80:
-					{// нажата клавиша вниз
+					{// Г­Г Г¦Г ГІГ  ГЄГ«Г ГўГЁГёГ  ГўГ­ГЁГ§
 						system("cls");
 						cout << "\n\t Do you want save your resalt?\n";
 						cout << "\t             Yes\n";
@@ -656,11 +656,11 @@ public:
 					SetColor(15, 0);
 					system("pause");
 
-					//зразу після гри запис гравця і його результату у текстовий файл
-					write.open("Board_champ.txt", ios::app);  //відкриваємо файл для запису
+					//Г§Г°Г Г§Гі ГЇВіГ±Г«Гї ГЈГ°ГЁ Г§Г ГЇГЁГ± ГЈГ°Г ГўГ¶Гї Ві Г©Г®ГЈГ® Г°ГҐГ§ГіГ«ГјГІГ ГІГі Гі ГІГҐГЄГ±ГІГ®ГўГЁГ© ГґГ Г©Г«
+					write.open("Board_champ.txt", ios::app);  //ГўВіГ¤ГЄГ°ГЁГўГ ВєГ¬Г® ГґГ Г©Г« Г¤Г«Гї Г§Г ГЇГЁГ±Гі
 					write << " " << nameuser;
 					write << " " << bestscore << endl;
-					write.close();  //закриваємо файл
+					write.close();  //Г§Г ГЄГ°ГЁГўГ ВєГ¬Г® ГґГ Г©Г«
 
 					system("cls");
 				}
@@ -670,7 +670,7 @@ public:
 				system("cls");
 				string temp;
 				int temp2;
-				read.open("Board_champ.txt");  //відкриваємо файл для запису
+				read.open("Board_champ.txt");  //ГўВіГ¤ГЄГ°ГЁГўГ ВєГ¬Г® ГґГ Г©Г« Г¤Г«Гї Г§Г ГЇГЁГ±Гі
 				SetColor(14, 0);
 				cout << "  --- Board of Champions --- \n";
 				SetColor(10, 0);
@@ -684,7 +684,7 @@ public:
 					if (k % 2 == 0)
 					{
 						read >> temp2;
-						userready.insert({ temp, temp2 });   //зчитуємо
+						userready.insert({ temp, temp2 });   //Г§Г·ГЁГІГіВєГ¬Г®
 					}
 					else
 					{
@@ -692,7 +692,7 @@ public:
 					}
 				}
 
-				//сортуємо для нормального виводу на екран
+				//Г±Г®Г°ГІГіВєГ¬Г® Г¤Г«Гї Г­Г®Г°Г¬Г Г«ГјГ­Г®ГЈГ® ГўГЁГўГ®Г¤Гі Г­Г  ГҐГЄГ°Г Г­
 				vector<pair<string, int>> vec;
 				// copy key-value pairs from the map to the vector
 				map<string, int> ::iterator it2;
@@ -716,7 +716,7 @@ public:
 				cout << endl;
 
 				system("pause");
-				read.close();  //обовязково закриваємо
+				read.close();  //Г®ГЎГ®ГўГїГ§ГЄГ®ГўГ® Г§Г ГЄГ°ГЁГўГ ВєГ¬Г®
 			}
 			else if (menu == 3)
 			{
@@ -737,7 +737,7 @@ public:
 					switch (ch1)
 					{
 					case 72:
-					{// нажата клавиша вверх
+					{// Г­Г Г¦Г ГІГ  ГЄГ«Г ГўГЁГёГ  ГўГўГҐГ°Гµ
 						system("cls");
 						SetColor(14, 0);
 						cout << "\n \t\t-Settings-\n";
@@ -750,7 +750,7 @@ public:
 						break;
 					}
 					case 80:
-					{// нажата клавиша вниз
+					{// Г­Г Г¦Г ГІГ  ГЄГ«Г ГўГЁГёГ  ГўГ­ГЁГ§
 						system("cls");
 						SetColor(14, 0);
 						cout << "\n \t\t-Settings-\n";
@@ -791,7 +791,7 @@ public:
 				}
 
 			}
-			else  // кінець гри
+			else  // ГЄВіГ­ГҐГ¶Гј ГЈГ°ГЁ
 			{
 				exit = false;
 				system("cls");
